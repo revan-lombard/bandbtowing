@@ -9,6 +9,7 @@
   <meta property="og:title" content="B&amp;B Towing">
   <meta property="og:description" content="Stuck? Book a tow online and get confirmation on WhatsApp.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/gallery/audi-r8.jpg">
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +41,8 @@
 
   <main id="main">
     <section class="hero">
-      <div class="container">
+      <div class="container hero-grid">
+        <div>
         <span class="eyebrow">Towing &amp; Recovery</span>
         <h1>Stuck on the road?<br><span>We'll get you moving.</span></h1>
         <p class="lead">Breakdowns, accidents and vehicle moves handled with care. Tell us where you are and where it needs to go. We'll confirm the price and arrival time on WhatsApp.</p>
@@ -59,6 +61,11 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Price confirmed before we roll</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Updates on WhatsApp</li>
         </ul>
+        </div>
+        <figure class="hero-photo">
+          <img src="assets/img/gallery/audi-r8.jpg" alt="Silver Audi R8 secured on a B&amp;B Towing trailer" width="1280" height="960">
+          <figcaption>Secured, strapped &amp; on its way</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -88,7 +95,18 @@
       </div>
     </section>
 
-    <section class="section section-alt" id="how">
+    <section class="section section-alt" id="recent">
+      <div class="container">
+        <div class="section-head">
+          <h2>Recent jobs</h2>
+          <p>From everyday runarounds to high-end sports cars, every vehicle is winched, strapped and secured properly.</p>
+        </div>
+        <div class="gallery-grid recent-grid" id="recent-grid"></div>
+        <p style="margin-top:20px"><a class="btn btn-outline" href="gallery.html">See all our work</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="how">
       <div class="container">
         <div class="section-head">
           <h2>How it works</h2>
@@ -111,7 +129,7 @@
       </div>
     </section>
 
-    <section class="section" id="why">
+    <section class="section section-alt" id="why">
       <div class="container">
         <div class="section-head">
           <h2>Why B&amp;B Towing</h2>
@@ -179,5 +197,6 @@
 
   <script src="assets/js/config.js"></script>
   <script src="assets/js/site.js"></script>
+  <script src="assets/js/gallery.js"></script>
 </body>
 </html>

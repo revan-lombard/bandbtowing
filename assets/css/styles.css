@@ -122,7 +122,7 @@ p { margin: 0 0 1em; }
 /* ---------- Hero ---------- */
 .hero {
   background:
-    linear-gradient(115deg, rgba(20, 22, 26, .96) 40%, rgba(20, 22, 26, .75)),
+    linear-gradient(115deg, rgba(20, 22, 26, .96) 40%, rgba(20, 22, 26, .8)),
     repeating-linear-gradient(-45deg, #1d2026 0 22px, #181a1f 22px 44px);
   color: #fff;
   padding: 72px 0 80px;
@@ -401,3 +401,38 @@ input:focus, select:focus, textarea:focus { border-color: var(--ink); outline: n
 /* Booking page: quick call line in the header (useful on phones, where the aside sits below the form) */
 .page-head .call-line { margin-top: 14px; font-weight: 600; color: #fff; }
 .page-head .call-line a { color: var(--brand-bright); }
+
+/* Homepage "Recent jobs" strip */
+.recent-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.recent-grid a.gallery-item { text-decoration: none; display: block; }
+.recent-grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .3s; }
+.recent-grid a.gallery-item:hover img { transform: scale(1.03); }
+.recent-cap { display: block; padding: 12px 14px; font-weight: 600; font-size: .95rem; }
+
+.hero-grid { display: grid; gap: 40px; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: center; }
+.hero-photo { margin: 0; position: relative; }
+.hero-photo img {
+  width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .45); border: 3px solid rgba(255, 255, 255, .08);
+}
+.hero-photo figcaption {
+  position: absolute; left: 16px; bottom: 16px; background: var(--brand); color: var(--brand-ink);
+  font-weight: 700; font-size: .85rem; padding: 6px 12px; border-radius: 8px;
+}
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* Gallery page: first photo featured large, captions over the photos */
+.gallery-page .gallery-item { aspect-ratio: 4 / 3; }
+.gallery-page .gallery-item button, .gallery-page .gallery-item img { height: 100%; }
+.gallery-page .gallery-item img { aspect-ratio: auto; transition: transform .3s; }
+.gallery-page .gallery-item:hover img { transform: scale(1.03); }
+.gallery-page .gallery-item figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; pointer-events: none;
+  padding: 36px 14px 12px; color: #fff;
+  background: linear-gradient(transparent, rgba(10, 11, 13, .82));
+}
+@media (min-width: 600px) {
+  .gallery-page .gallery-item:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+}

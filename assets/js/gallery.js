@@ -5,11 +5,29 @@
  * Leave the list empty to show "coming soon" placeholders.
  */
 var GALLERY_PHOTOS = [
-  // { src: "assets/img/gallery/example.jpg", caption: "Describe the job" },
+  { src: "assets/img/gallery/audi-r8.jpg", caption: "Audi R8 strapped down and ready to roll" },
+  { src: "assets/img/gallery/toyota-supra.jpg", caption: "Toyota GR Supra collection" },
+  { src: "assets/img/gallery/honda-s2000.jpg", caption: "Honda S2000 winched and secured" },
+  { src: "assets/img/gallery/audi-r8-ranger.jpg", caption: "Audi R8 on our rig, on its way" },
+  { src: "assets/img/gallery/mercedes-a45.jpg", caption: "Mercedes-AMG A45 delivery" },
 ];
 
 (function () {
   var grid = document.getElementById("gallery-grid");
+  var recent = document.getElementById("recent-grid");
+  if (recent) {
+    // Skip the first photo: it is already the big photo at the top of the homepage
+    GALLERY_PHOTOS.slice(1, 4).forEach(function (photo) {
+      var a = document.createElement("a");
+      a.className = "gallery-item";
+      a.href = "gallery.html";
+      a.innerHTML = '<img loading="lazy" alt=""><span class="recent-cap"></span>';
+      a.querySelector("img").src = photo.src;
+      a.querySelector("img").alt = photo.caption || "";
+      a.querySelector(".recent-cap").textContent = photo.caption || "";
+      recent.appendChild(a);
+    });
+  }
   if (!grid) return;
 
   var cameraIcon =
