@@ -5,10 +5,10 @@
  * Leave the list empty to show "coming soon" placeholders.
  */
 var GALLERY_PHOTOS = [
+  { src: "assets/img/gallery/audi-r8-ranger.jpg", caption: "Our bakkie and trailer delivering an Audi R8" },
   { src: "assets/img/gallery/audi-r8.jpg", caption: "Audi R8 strapped down and ready to roll" },
   { src: "assets/img/gallery/toyota-supra.jpg", caption: "Toyota GR Supra collection" },
   { src: "assets/img/gallery/honda-s2000.jpg", caption: "Honda S2000 winched and secured" },
-  { src: "assets/img/gallery/audi-r8-ranger.jpg", caption: "Audi R8 on our rig, on its way" },
   { src: "assets/img/gallery/mercedes-a45.jpg", caption: "Mercedes-AMG A45 delivery" },
 ];
 

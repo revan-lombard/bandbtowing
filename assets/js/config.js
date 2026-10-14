@@ -7,12 +7,12 @@ window.BB_CONFIG = {
 
   // Number that receives booking requests on WhatsApp.
   // International format, digits only (South Africa = 27, drop the leading 0).
-  // Testing number: 072 237 5833
-  whatsappNumber: "27722375833",
+  // Testing number: 082 776 0118
+  whatsappNumber: "27827760118",
 
   // Number for the "Call us" buttons (shown to customers as written below).
-  phoneNumber: "+27722375833",
-  phoneDisplay: "072 237 5833",
+  phoneNumber: "+27827760118",
+  phoneDisplay: "082 776 0118",
 
   // Default map view (roughly central Gauteng) used before a location is chosen.
   mapCenter: [-26.1, 28.05],
