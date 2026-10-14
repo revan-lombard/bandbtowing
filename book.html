@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a Tow | B&amp;B Towing</title>
+  <meta name="description" content="Book a tow with B&amp;B Towing. Enter your vehicle and pickup and drop-off points and we will confirm the price on WhatsApp.">
+  <meta name="theme-color" content="#14161a">
+  <meta property="og:title" content="B&amp;B Towing">
+  <meta property="og:description" content="Stuck? Book a tow online and get confirmation on WhatsApp.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="no-quickbar">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.svg" alt="" width="40" height="40">
+        <span>B&amp;B Towing</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Our Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="btn btn-primary" href="book.html" aria-current="page">Book a Tow</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="container">
+        <h1>Book a Tow</h1>
+        <p>Takes about 2 minutes. Your request goes straight to our WhatsApp and we'll reply with a price and arrival time.</p>
+        <p class="call-line">In a hurry or unsafe? Call <a data-tel href="tel:+27722375833"><span data-phone-display>072 237 5833</span></a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container booking-layout">
+        <div>
+          <form class="form-card" id="booking-form" novalidate>
+            <fieldset>
+              <legend><span class="num">1</span>Your details</legend>
+              <div class="row">
+                <div class="field">
+                  <label for="name">Full name <span class="req">*</span></label>
+                  <input type="text" id="name" name="name" autocomplete="name" required>
+                  <p class="error-msg">Please enter your name.</p>
+                </div>
+                <div class="field">
+                  <label for="whatsapp">WhatsApp number <span class="req">*</span></label>
+                  <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="e.g. 082 123 4567" required>
+                  <p class="hint">We'll send your quote and updates here.</p>
+                  <p class="error-msg">Please enter a valid cell number, e.g. 082 123 4567.</p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="altphone">Other number for calls <span class="opt">(optional)</span></label>
+                <input type="tel" id="altphone" name="altphone" inputmode="tel" placeholder="If different from your WhatsApp number">
+                <p class="error-msg">That number doesn't look right.</p>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="num">2</span>Your vehicle</legend>
+              <div class="row">
+                <div class="field">
+                  <label for="make">Make <span class="req">*</span></label>
+                  <input type="text" id="make" name="make" list="makes" placeholder="e.g. Toyota" autocomplete="off" required>
+                  <datalist id="makes">
+                    <option value="Audi"><option value="BMW"><option value="Chevrolet"><option value="Chery"><option value="Ford">
+                    <option value="GWM"><option value="Haval"><option value="Honda"><option value="Hyundai"><option value="Isuzu">
+                    <option value="Kia"><option value="Land Rover"><option value="Mahindra"><option value="Mazda"><option value="Mercedes-Benz">
+                    <option value="Mitsubishi"><option value="Nissan"><option value="Opel"><option value="Renault"><option value="Suzuki">
+                    <option value="Toyota"><option value="Volkswagen"><option value="Volvo">
+                  </datalist>
+                  <p class="error-msg">Please enter the make.</p>
+                </div>
+                <div class="field">
+                  <label for="model">Model <span class="req">*</span></label>
+                  <input type="text" id="model" name="model" placeholder="e.g. Corolla" autocomplete="off" required>
+                  <p class="error-msg">Please enter the model.</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <label for="vtype">Vehicle type <span class="req">*</span></label>
+                  <select id="vtype" name="vtype" required>
+                    <option value="">Choose…</option>
+                    <option>Hatchback / Sedan</option>
+                    <option>SUV / Bakkie</option>
+                    <option>Minibus / Van</option>
+                    <option>Motorbike</option>
+                    <option>Other / Not sure</option>
+                  </select>
+                  <p class="error-msg">Please choose a vehicle type.</p>
+                </div>
+                <div class="field">
+                  <label for="reg">Registration / colour <span class="opt">(optional)</span></label>
+                  <input type="text" id="reg" name="reg" placeholder="e.g. White, CA 123-456" autocomplete="off">
+                  <p class="hint">Helps our driver spot your vehicle.</p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="problem">What happened? <span class="req">*</span></label>
+                <select id="problem" name="problem" required>
+                  <option value="">Choose…</option>
+                  <option>Breakdown / won't start</option>
+                  <option>Accident</option>
+                  <option>Flat tyre / no spare</option>
+                  <option>Moving a vehicle (planned)</option>
+                  <option>Other</option>
+                </select>
+                <p class="error-msg">Please tell us what happened.</p>
+              </div>
+              <div class="row">
+                <div class="field" data-group="keys">
+                  <span class="label" id="keys-label">Do you have the keys? <span class="req">*</span></span>
+                  <div class="choices" role="radiogroup" aria-labelledby="keys-label">
+                    <label class="choice"><input type="radio" name="keys" value="Yes" required><span>Yes</span></label>
+                    <label class="choice"><input type="radio" name="keys" value="No"><span>No</span></label>
+                  </div>
+                  <p class="error-msg">Please choose one.</p>
+                </div>
+                <div class="field" data-group="owner">
+                  <span class="label" id="owner-label">Are you the owner? <span class="req">*</span></span>
+                  <div class="choices" role="radiogroup" aria-labelledby="owner-label">
+                    <label class="choice"><input type="radio" name="owner" value="Yes" required><span>Yes</span></label>
+                    <label class="choice"><input type="radio" name="owner" value="No"><span>No</span></label>
+                  </div>
+                  <p class="error-msg">Please choose one.</p>
+                </div>
+              </div>
+              <div class="reveal" id="owner-details">
+                <div class="row">
+                  <div class="field">
+                    <label for="ownerName">Owner's name <span class="opt">(if known)</span></label>
+                    <input type="text" id="ownerName" name="ownerName" autocomplete="off">
+                  </div>
+                  <div class="field">
+                    <label for="ownerPhone">Owner's number <span class="opt">(if known)</span></label>
+                    <input type="tel" id="ownerPhone" name="ownerPhone" inputmode="tel">
+                    <p class="error-msg">That number doesn't look right.</p>
+                  </div>
+                </div>
+                <p class="hint" style="margin:-6px 0 16px">We may need the owner's permission before we can move the vehicle.</p>
+              </div>
+              <div class="field" data-group="rolls">
+                <span class="label" id="rolls-label">Do the wheels turn freely? <span class="opt">(can it be pushed in neutral?)</span></span>
+                <div class="choices" role="radiogroup" aria-labelledby="rolls-label">
+                  <label class="choice"><input type="radio" name="rolls" value="Yes"><span>Yes</span></label>
+                  <label class="choice"><input type="radio" name="rolls" value="No"><span>No</span></label>
+                  <label class="choice"><input type="radio" name="rolls" value="Not sure"><span>Not sure</span></label>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="num">3</span>From where to where?</legend>
+
+              <div class="field loc-field" id="pickup-field">
+                <label for="pickup">Pickup location <span class="req">*</span></label>
+                <div class="loc-input">
+                  <span class="loc-badge a" aria-hidden="true">A</span>
+                  <input type="search" id="pickup" placeholder="Search an address or place" autocomplete="off"
+                         role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="pickup-list">
+                  <button type="button" class="icon-btn" id="locate-btn" title="Use my current location" aria-label="Use my current location">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+                  </button>
+                </div>
+                <ul class="suggestions" id="pickup-list" role="listbox"></ul>
+                <p class="hint" id="locate-status" aria-live="polite">Tap <strong>◎</strong> to use your current location, or search, or tap the map.</p>
+                <p class="error-msg">Please set the pickup location.</p>
+              </div>
+
+              <div class="field loc-field" id="dropoff-field">
+                <label for="dropoff">Drop-off location <span class="req">*</span></label>
+                <div class="loc-input">
+                  <span class="loc-badge b" aria-hidden="true">B</span>
+                  <input type="search" id="dropoff" placeholder="e.g. your mechanic, home or dealer" autocomplete="off"
+                         role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="dropoff-list">
+                </div>
+                <ul class="suggestions" id="dropoff-list" role="listbox"></ul>
+                <p class="error-msg">Please set the drop-off location.</p>
+              </div>
+
+              <div class="map-wrap">
+                <div class="map-mode" role="radiogroup" aria-label="Tapping the map sets">
+                  <span>Tap map to set:</span>
+                  <label class="choice"><input type="radio" name="mapmode" value="pickup" checked><span>A Pickup</span></label>
+                  <label class="choice"><input type="radio" name="mapmode" value="dropoff"><span>B Drop-off</span></label>
+                </div>
+                <div id="map" role="application" aria-label="Map. Tap to place pickup or drop-off pins; drag pins to adjust."></div>
+              </div>
+              <div class="route-summary" id="route-summary" aria-live="polite"></div>
+
+              <div class="field" style="margin-top:16px">
+                <label for="landmark">Landmarks or directions <span class="opt">(optional)</span></label>
+                <input type="text" id="landmark" name="landmark" placeholder="e.g. Next to the Engen, northbound side of the N1">
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="num">4</span>When &amp; anything else</legend>
+              <div class="field" data-group="when">
+                <span class="label" id="when-label">When do you need us? <span class="req">*</span></span>
+                <div class="choices" role="radiogroup" aria-labelledby="when-label">
+                  <label class="choice"><input type="radio" name="when" value="ASAP" checked required><span>As soon as possible</span></label>
+                  <label class="choice"><input type="radio" name="when" value="Later"><span>Schedule for later</span></label>
+                </div>
+              </div>
+              <div class="reveal" id="schedule">
+                <div class="row">
+                  <div class="field">
+                    <label for="date">Date <span class="req">*</span></label>
+                    <input type="date" id="date" name="date">
+                    <p class="error-msg">Please choose a date (today or later).</p>
+                  </div>
+                  <div class="field">
+                    <label for="time">Time <span class="req">*</span></label>
+                    <input type="time" id="time" name="time">
+                    <p class="error-msg">Please choose a time.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label for="notes">Anything else we should know? <span class="opt">(optional)</span></label>
+                <textarea id="notes" name="notes" placeholder="e.g. Car is in a basement parking, low clearance, I'm waiting with the car…"></textarea>
+              </div>
+              <div class="field" data-group="consent">
+                <label class="checkbox">
+                  <input type="checkbox" id="consent" name="consent" required>
+                  <span>I agree that B&amp;B Towing may contact me on WhatsApp or by phone about this request. My details are only used to arrange this tow.</span>
+                </label>
+                <p class="error-msg">Please tick the box so we can contact you.</p>
+              </div>
+            </fieldset>
+
+            <div class="form-errors" id="form-errors" role="alert"></div>
+
+            <div class="submit-area">
+              <button type="submit" class="btn btn-wa btn-lg btn-block">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.2 0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.9 1.9 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.1 1.3 15.2.1 12 .1 5.5.1.1 5.5.1 12c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7c1.7.9 3.7 1.4 5.7 1.4 6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.4z"/></svg>
+                Send request on WhatsApp
+              </button>
+              <p class="hint">WhatsApp will open with your request filled in. Just tap send.</p>
+            </div>
+          </form>
+
+          <div class="form-card success" id="success" tabindex="-1">
+            <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <h2>Almost done</h2>
+            <p>Your reference is <span class="ref" id="success-ref"></span></p>
+            <p><strong>Make sure you tap send in WhatsApp</strong> so we receive your request. We'll reply with a price and arrival time.</p>
+            <div class="actions">
+              <a class="btn btn-wa btn-lg" id="wa-again" href="#" target="_blank" rel="noopener">Open WhatsApp again</a>
+              <button type="button" class="btn btn-outline" id="copy-btn">Copy request text</button>
+              <a class="btn btn-outline" data-tel href="tel:+27722375833">Or call <span data-phone-display>072 237 5833</span></a>
+            </div>
+            <details>
+              <summary>View your request</summary>
+              <pre id="success-text"></pre>
+            </details>
+            <p style="margin-top:20px"><button type="button" class="btn btn-outline" id="edit-btn">Edit request</button></p>
+          </div>
+        </div>
+
+        <aside class="booking-aside">
+          <div class="card">
+            <h3>What happens next?</h3>
+            <ol>
+              <li>WhatsApp opens with your request. Tap <strong>send</strong>.</li>
+              <li>We reply with a price and arrival time.</li>
+              <li>You confirm and we're on our way.</li>
+            </ol>
+          </div>
+          <div class="card">
+            <h3>In danger or blocking traffic?</h3>
+            <p>Switch on your hazards, move to a safe spot away from the vehicle, and call us directly.</p>
+            <a class="btn btn-primary btn-block" style="margin-top:12px" data-tel href="tel:+27722375833">Call <span data-phone-display>072 237 5833</span></a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div>
+        <h3>B&amp;B Towing</h3>
+        <p>Towing, recovery and vehicle transport.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a data-tel href="tel:+27722375833">Call: <span data-phone-display>072 237 5833</span></a></li>
+          <li><a data-wa="Hi B&B Towing, I need a tow." href="https://wa.me/27722375833">WhatsApp us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Pages</h3>
+        <ul>
+          <li><a href="book.html">Book a Tow</a></li>
+          <li><a href="gallery.html">Our Work</a></li>
+        </ul>
+      </div>
+      <p class="legal">&copy; <span id="year">2026</span> B&amp;B Towing. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="quick-bar">
+    <a class="btn btn-outline" style="color:#fff" data-tel href="tel:+27722375833">Call</a>
+    <a class="btn btn-wa" data-wa="Hi B&B Towing, I need a tow." href="https://wa.me/27722375833">WhatsApp</a>
+    <a class="btn btn-primary" href="book.html">Book</a>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="assets/js/booking.js"></script>
+</body>
+</html>
