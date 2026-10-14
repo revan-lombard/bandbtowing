@@ -273,7 +273,7 @@
   function drawLine(coords) {
     if (!map) return;
     if (route.line) map.removeLayer(route.line);
-    route.line = L.polyline(coords, { color: "#14161a", weight: 5, opacity: .75 }).addTo(map);
+    route.line = L.polyline(coords, { color: "#1a6be0", weight: 5, opacity: .75 }).addTo(map);
   }
 
   function updateRoute() {

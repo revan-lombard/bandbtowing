@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="B&amp;B Towing">
   <!-- Placeholder mark: replace with the real logo when it is ready -->
-  <rect width="64" height="64" rx="14" fill="#f5b400"/>
-  <path d="M14 40h22l6-10h8v10h2" fill="none" stroke="#14161a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M36 40V24h-6" fill="none" stroke="#14161a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="20" cy="42" r="5" fill="#14161a"/>
-  <circle cx="46" cy="42" r="5" fill="#14161a"/>
-  <path d="M30 24l-12 12" stroke="#14161a" stroke-width="3" stroke-linecap="round"/>
+  <rect width="64" height="64" rx="14" fill="#1a6be0"/>
+  <path d="M14 40h22l6-10h8v10h2" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M36 40V24h-6" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="20" cy="42" r="5" fill="#ffffff"/>
+  <circle cx="46" cy="42" r="5" fill="#ffffff"/>
+  <path d="M30 24l-12 12" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
 </svg>
